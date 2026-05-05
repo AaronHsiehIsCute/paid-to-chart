@@ -1,0 +1,50 @@
+:root {
+  --bg: rgba(70, 70, 70, 0.34);
+  --panel: rgba(255, 255, 255, 0.13);
+  --up: #ff6b6b;
+  --down: #33d17a;
+  --flat: #c9c9c9;
+  --text: #f4f6f8;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+  color: var(--text);
+  background: linear-gradient(120deg, #2f3640, #4b4f54);
+}
+.board-wrap { display: grid; place-items: center; min-height: 100vh; padding: 20px; }
+.board {
+  width: min(720px, 100%);
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  padding: 20px;
+}
+.board-header { display:flex; justify-content:space-between; align-items:end; gap:12px; }
+.board-header h1{ margin:0; font-size:1.4rem; }
+.board-header p{ margin:0; opacity:.8; font-size:.9rem; }
+.stock-list{ margin:16px 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; }
+.stock-item{ display:grid; grid-template-columns:1fr auto auto; gap:12px; align-items:center; background:var(--panel); border-radius:12px; padding:10px 12px; }
+.stock-main .code{ margin:0; font-weight:700; }
+.stock-main .name{ margin:2px 0 0; opacity:.85; font-size:.9rem; }
+.stock-price p{ margin:0; text-align:right; }
+.change.up{ color:var(--up); }
+.change.down{ color:var(--down); }
+.change.flat{ color:var(--flat); }
+.remove-btn,.add-btn,menu button{ border:0; cursor:pointer; }
+.remove-btn{ background:transparent; color:#fff; opacity:.7; font-size:1rem; }
+.remove-btn:hover{ opacity:1; }
+.add-btn{ width:100%; padding:12px; border-radius:12px; background:rgba(255,255,255,.2); color:#fff; font-size:1.5rem; }
+.add-btn:hover{ background:rgba(255,255,255,.27); }
+.stock-dialog{ border:0; border-radius:12px; padding:0; }
+#stockForm{ min-width:280px; background:#1f2327; color:white; padding:18px; }
+#stockForm h2{ margin-top:0; }
+#stockForm input{ width:100%; padding:8px 10px; margin-top:8px; border-radius:8px; border:1px solid #666; background:#2a2f34; color:#fff; }
+menu{ display:flex; justify-content:flex-end; gap:8px; margin:14px 0 0; padding:0; }
+menu button{ padding:8px 12px; border-radius:8px; }
+menu .primary{ background:#4ea1ff; color:#fff; }

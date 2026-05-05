@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>台股偷看盤</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="board-wrap">
+      <section class="board">
+        <header class="board-header">
+          <h1>台股偷看盤</h1>
+          <p id="updateTime">尚未更新</p>
+        </header>
+
+        <ul id="stockList" class="stock-list"></ul>
+
+        <button id="addStockBtn" class="add-btn" aria-label="新增股票">＋</button>
+      </section>
+    </main>
+
+    <dialog id="stockDialog" class="stock-dialog">
+      <form id="stockForm" method="dialog">
+        <h2>新增股票</h2>
+        <label for="stockCode">股票代號（例如 2330）</label>
+        <input id="stockCode" name="stockCode" maxlength="4" pattern="\\d{4}" required />
+        <menu>
+          <button type="button" id="cancelBtn">取消</button>
+          <button type="submit" class="primary">新增</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <template id="stockItemTpl">
+      <li class="stock-item">
+        <div class="stock-main">
+          <p class="code"></p>
+          <p class="name"></p>
+        </div>
+        <div class="stock-price">
+          <p class="price"></p>
+          <p class="change"></p>
+        </div>
+        <button class="remove-btn" title="移除">✕</button>
+      </li>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
